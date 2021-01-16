@@ -1,2 +1,2 @@
 # web-berita
-oke bagus
+tugas ptik membuat sistem informasi berbasis web dengan memuat cms
