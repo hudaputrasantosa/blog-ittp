@@ -7,7 +7,7 @@ $judul = $_POST['judul'];
 $isi = $_POST['isi'];
 
 $rand = rand();
-$ekstensi = array('jpg','jpeg','png');
+$ekstensi = array('jpg','JPG','jpeg','png','PNG');
 $filename = $_FILES['foto']['name'];
 $ukuran = $_FILES['foto']['size'];
 $ext = pathinfo($filename,PATHINFO_EXTENSION);

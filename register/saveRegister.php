@@ -5,7 +5,7 @@ $nama = $_POST['nama'];
 $user = $_POST['username'];
 $pass = $_POST['password'];
 
-$query = mysqli_query($koneksi, "INSERT INTO user VALUES('','$nama','$user','$pass')");
+$query = mysqli_query($koneksi, "INSERT INTO user VALUES('','$nama','$user','$pass','user')");
 
 if ($query) {
 	header("location:../login/login.php?pesan=suksesregister");
