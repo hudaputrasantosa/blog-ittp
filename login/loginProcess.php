@@ -1,8 +1,6 @@
 <?php 
-
-
-
 include '../config.php';
+session_start();
 
 $user = $_POST['username'];
 $pass = $_POST['password'];
@@ -18,19 +16,23 @@ $nums = mysqli_num_rows($query_adm);
 if ($num>0 || $nums>0) {
 	
 if($row['username'] == $user AND $row['password']== $pass){	
-	session_start();
+	
 		$_SESSION['username'] = $user;
 		$_SESSION['password'] = $pass;
 		$_SESSION['nama'] = $row['nama'];
+
+		$_SESSION["login"] = true;
 
 		header("location:../halaman_user.php?pesan=berhasilLogin");	
 }
 
 else if ($rows['username'] == $user AND $rows['password'] == $pass){	
-	session_start();
+	
 		$_SESSION['username'] = $user;
 		$_SESSION['password'] = $pass;
 		$_SESSION['nama'] = $rows['nama'];
+
+		$_SESSION["login"] = true;
 
 		header("location:../halaman_admin.php?pesan=berhasilLogin");	
 }

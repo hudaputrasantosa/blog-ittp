@@ -1,37 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Beranda</title>
-	  <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- JS -->
-     <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/blog.css">
-
-     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    
-</head>
-<body>
 <?php 
 session_start();
+if (!isset($_SESSION["login"])) {
+	header("location:login/login.php");
+	exit;
+}
+
 date_default_timezone_set("Asia/Jakarta");
 $tgl = date('d F Y');
 function hari_ini(){
@@ -73,8 +46,39 @@ function hari_ini(){
 	}
 	return $hari_ini;
 }
-
  ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Beranda</title>
+	  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- JS -->
+     <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/blog.css">
+
+     <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    
+</head>
+<body>
 
 
   <div class="container">

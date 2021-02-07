@@ -1,18 +1,10 @@
-<html lang="en">
-<head>
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-
-	<style type="text/css">
-		
-		
-	</style>
-</head>
-<body>
-	
-	
 <?php 
 session_start();
+if (!isset($_SESSION["login"])) {
+	header("location:login/login.php");
+	exit;
+}
+
 date_default_timezone_set("Asia/Jakarta");
 $tgl = date('d F Y');
 
@@ -58,7 +50,17 @@ echo hari_ini().", ".$tgl."<br>";
 echo "Halo ".$_SESSION['nama'];
 
  ?>
- 
+<html lang="en">
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<style type="text/css">
+		
+		
+	</style>
+</head>
+<body>
 
 <div><a href="tambahPetugas.php">Tambah Petugas</a>
  <a href="logout.php">Logout</a>	</div>
